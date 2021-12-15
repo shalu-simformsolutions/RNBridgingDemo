@@ -18,7 +18,6 @@
 @synthesize imageUrl;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    RCTLogInfo(@"imageUrl %@", [self imageUrl]);
   dispatch_async(dispatch_get_global_queue(0,0), ^{
               NSData * data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: [self imageUrl]]];
               if ( data == nil )

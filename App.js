@@ -19,8 +19,10 @@ import {
 LogBox.ignoreAllLogs();
 
 const App = () => {
+  const {NavigateToNative, TestingEvent} = NativeModules.NativeScreen;
   const imageUrl =
     'https://s3.amazonaws.com/media-p.slid.es/uploads/alexanderfarennikov/images/1198519/reactjs.png';
+    
   return (
     <View style={styles.container}>
       <Image
@@ -32,7 +34,7 @@ const App = () => {
       <TouchableOpacity
         style={styles.button}
         onPress={() => {
-          NativeModules.NativeScreen.NavigateToNative(imageUrl);
+          NavigateToNative(imageUrl);
         }}>
         <Text style={styles.text}>Open Native Screen! 🎉</Text>
       </TouchableOpacity>
@@ -40,7 +42,7 @@ const App = () => {
       <TouchableOpacity
         style={styles.button}
         onPress={() => {
-          NativeModules.NativeScreen.TestingEvent('React native bridge testing event');
+          TestingEvent('React native bridge testing event');
         }}>
         <Text style={styles.text}>Testing event! 🎉</Text>
       </TouchableOpacity>
